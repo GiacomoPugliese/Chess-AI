@@ -1,4 +1,4 @@
-package BOARD;
+package GAME;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
@@ -63,27 +63,27 @@ public class Board {
             }
         }
 
-        board[0][0].add(new Rook(new ImageIcon("BOARD/black_pieces_imgs/rookblack.png"), "black"));
-        board[0][1].add(new Knight(new ImageIcon("BOARD/black_pieces_imgs/knightblack.png"), "black"));
-        board[0][2].add(new Bishop(new ImageIcon("BOARD/black_pieces_imgs/bishopblack.png"), "black"));
-        board[0][3].add(new King(new ImageIcon("BOARD/black_pieces_imgs/kingblack.png"), "black"));
-        board[0][4].add(new Queen(new ImageIcon("BOARD/black_pieces_imgs/queenblack.png"), "black"));
-        board[0][5].add(new Bishop(new ImageIcon("BOARD/black_pieces_imgs/bishopblack.png"), "black"));
-        board[0][6].add(new Knight(new ImageIcon("BOARD/black_pieces_imgs/knightblack.png"), "black"));
-        board[0][7].add(new Rook(new ImageIcon("BOARD/black_pieces_imgs/rookblack.png"), "black"));
+        board[0][0].add(new Rook(new ImageIcon("GAME/black_pieces_imgs/rookblack.png"), "black"));
+        board[0][1].add(new Knight(new ImageIcon("GAME/black_pieces_imgs/knightblack.png"), "black"));
+        board[0][2].add(new Bishop(new ImageIcon("GAME/black_pieces_imgs/bishopblack.png"), "black"));
+        board[0][3].add(new King(new ImageIcon("GAME/black_pieces_imgs/kingblack.png"), "black"));
+        board[0][4].add(new Queen(new ImageIcon("GAME/black_pieces_imgs/queenblack.png"), "black"));
+        board[0][5].add(new Bishop(new ImageIcon("GAME/black_pieces_imgs/bishopblack.png"), "black"));
+        board[0][6].add(new Knight(new ImageIcon("GAME/black_pieces_imgs/knightblack.png"), "black"));
+        board[0][7].add(new Rook(new ImageIcon("GAME/black_pieces_imgs/rookblack.png"), "black"));
 
-        board[7][0].add(new Rook(new ImageIcon("BOARD/white_pieces_imgs/rookwhite.png"), "white"));
-        board[7][1].add(new Knight(new ImageIcon("BOARD/white_pieces_imgs/knightwhite.png"), "white"));
-        board[7][2].add(new Bishop(new ImageIcon("BOARD/white_pieces_imgs/bishopwhite.png"), "white"));
-        board[7][3].add(new King(new ImageIcon("BOARD/white_pieces_imgs/kingwhite.png"), "white"));
-        board[7][4].add(new Queen(new ImageIcon("BOARD/white_pieces_imgs/queenwhite.png"), "white"));
-        board[7][5].add(new Bishop(new ImageIcon("BOARD/white_pieces_imgs/bishopwhite.png"), "white"));
-        board[7][6].add(new Knight(new ImageIcon("BOARD/white_pieces_imgs/knightwhite.png"), "white"));
-        board[7][7].add(new Rook(new ImageIcon("BOARD/white_pieces_imgs/rookwhite.png"), "white"));
+        board[7][0].add(new Rook(new ImageIcon("GAME/white_pieces_imgs/rookwhite.png"), "white"));
+        board[7][1].add(new Knight(new ImageIcon("GAME/white_pieces_imgs/knightwhite.png"), "white"));
+        board[7][2].add(new Bishop(new ImageIcon("GAME/white_pieces_imgs/bishopwhite.png"), "white"));
+        board[7][3].add(new King(new ImageIcon("GAME/white_pieces_imgs/kingwhite.png"), "white"));
+        board[7][4].add(new Queen(new ImageIcon("GAME/white_pieces_imgs/queenwhite.png"), "white"));
+        board[7][5].add(new Bishop(new ImageIcon("GAME/white_pieces_imgs/bishopwhite.png"), "white"));
+        board[7][6].add(new Knight(new ImageIcon("GAME/white_pieces_imgs/knightwhite.png"), "white"));
+        board[7][7].add(new Rook(new ImageIcon("GAME/white_pieces_imgs/rookwhite.png"), "white"));
 
         for (int i = 0; i < 8; i++) {
-            board[1][i].add(new Pawn(new ImageIcon("BOARD/black_pieces_imgs/pawnblack.png"), "black"));
-            board[6][i].add(new Pawn(new ImageIcon("BOARD/white_pieces_imgs/pawnwhite.png"), "white"));
+            board[1][i].add(new Pawn(new ImageIcon("GAME/black_pieces_imgs/pawnblack.png"), "black"));
+            board[6][i].add(new Pawn(new ImageIcon("GAME/white_pieces_imgs/pawnwhite.png"), "white"));
         }
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

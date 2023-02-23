@@ -1,4 +1,4 @@
-package BOARD;
+package GAME;
 
 
 import java.awt.Component;
@@ -99,10 +99,10 @@ public class Bot {
                 String queen_color = ((Piece)move.clickedSquare.getComponent(0)).getColor();
                 move.clickedSquare.removeAll();
                 if(queen_color.equals("white")){
-                    move.clickedSquare.add(new Queen(new ImageIcon("BOARD/white_pieces_imgs/queenwhite.png"), queen_color));
+                    move.clickedSquare.add(new Queen(new ImageIcon("GAME/white_pieces_imgs/queenwhite.png"), queen_color));
                 }
                 else{
-                    move.clickedSquare.add(new Queen(new ImageIcon("BOARD/black_pieces_imgs/queenblack.png"), queen_color));
+                    move.clickedSquare.add(new Queen(new ImageIcon("GAME/black_pieces_imgs/queenblack.png"), queen_color));
                 }
             }
         }

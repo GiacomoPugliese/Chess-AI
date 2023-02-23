@@ -1,4 +1,4 @@
-package BOARD;
+package GAME;
 
 import javax.swing.Icon;
 

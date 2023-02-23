@@ -1,4 +1,4 @@
-package BOARD;
+package GAME;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -107,10 +107,10 @@ public class Pawn extends Piece {
             String queen_color = ((Piece)clickedSquare.getComponent(0)).getColor();
             clickedSquare.removeAll();
             if(queen_color.equals("white")){
-                clickedSquare.add(new Queen(new ImageIcon("BOARD/white_pieces_imgs/queenwhite.png"), queen_color));
+                clickedSquare.add(new Queen(new ImageIcon("GAME/white_pieces_imgs/queenwhite.png"), queen_color));
             }
             else{
-                clickedSquare.add(new Queen(new ImageIcon("BOARD/black_pieces_imgs/queenblack.png"), queen_color));
+                clickedSquare.add(new Queen(new ImageIcon("GAME/black_pieces_imgs/queenblack.png"), queen_color));
             }
         }
         incrementMoves();

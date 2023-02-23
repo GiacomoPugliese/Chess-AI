@@ -1,4 +1,4 @@
-package BOARD;
+package GAME;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -18,8 +18,8 @@ public class Queen extends Piece{
     }
     public boolean canSee(Square SelectedPiece, Square clickedSquare, Square[][] board){
         //if either a rook or a bishop could see it, so could a queen
-        Bishop temp_bishop = new Bishop(new ImageIcon("BOARD/white_pieces_imgs/bishopwhite.png"), "white");
-        Rook temp_rook = new Rook(new ImageIcon("BOARD/white_pieces_imgs/rookwhite.png"), "white");
+        Bishop temp_bishop = new Bishop(new ImageIcon("GAME/white_pieces_imgs/bishopwhite.png"), "white");
+        Rook temp_rook = new Rook(new ImageIcon("GAME/white_pieces_imgs/rookwhite.png"), "white");
         if(temp_bishop.canSee(SelectedPiece, clickedSquare, board)){
             return true;
         }
