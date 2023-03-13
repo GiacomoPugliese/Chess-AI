@@ -55,9 +55,9 @@ public class Board {
                 });
 
                 if ((i + j) % 2 == 0) {
-                    board[i][j].setBackground(Color.orange);
-                } else {
                     board[i][j].setBackground(Color.white);
+                } else {
+                    board[i][j].setBackground(Color.orange);
                 }   
                 frame.add(board[i][j]);
             }
@@ -66,8 +66,8 @@ public class Board {
         board[0][0].add(new Rook(new ImageIcon("GAME/black_pieces_imgs/rookblack.png"), "black"));
         board[0][1].add(new Knight(new ImageIcon("GAME/black_pieces_imgs/knightblack.png"), "black"));
         board[0][2].add(new Bishop(new ImageIcon("GAME/black_pieces_imgs/bishopblack.png"), "black"));
-        board[0][3].add(new King(new ImageIcon("GAME/black_pieces_imgs/kingblack.png"), "black"));
-        board[0][4].add(new Queen(new ImageIcon("GAME/black_pieces_imgs/queenblack.png"), "black"));
+        board[0][4].add(new King(new ImageIcon("GAME/black_pieces_imgs/kingblack.png"), "black"));
+        board[0][3].add(new Queen(new ImageIcon("GAME/black_pieces_imgs/queenblack.png"), "black"));
         board[0][5].add(new Bishop(new ImageIcon("GAME/black_pieces_imgs/bishopblack.png"), "black"));
         board[0][6].add(new Knight(new ImageIcon("GAME/black_pieces_imgs/knightblack.png"), "black"));
         board[0][7].add(new Rook(new ImageIcon("GAME/black_pieces_imgs/rookblack.png"), "black"));
@@ -75,8 +75,8 @@ public class Board {
         board[7][0].add(new Rook(new ImageIcon("GAME/white_pieces_imgs/rookwhite.png"), "white"));
         board[7][1].add(new Knight(new ImageIcon("GAME/white_pieces_imgs/knightwhite.png"), "white"));
         board[7][2].add(new Bishop(new ImageIcon("GAME/white_pieces_imgs/bishopwhite.png"), "white"));
-        board[7][3].add(new King(new ImageIcon("GAME/white_pieces_imgs/kingwhite.png"), "white"));
-        board[7][4].add(new Queen(new ImageIcon("GAME/white_pieces_imgs/queenwhite.png"), "white"));
+        board[7][4].add(new King(new ImageIcon("GAME/white_pieces_imgs/kingwhite.png"), "white"));
+        board[7][3].add(new Queen(new ImageIcon("GAME/white_pieces_imgs/queenwhite.png"), "white"));
         board[7][5].add(new Bishop(new ImageIcon("GAME/white_pieces_imgs/bishopwhite.png"), "white"));
         board[7][6].add(new Knight(new ImageIcon("GAME/white_pieces_imgs/knightwhite.png"), "white"));
         board[7][7].add(new Rook(new ImageIcon("GAME/white_pieces_imgs/rookwhite.png"), "white"));

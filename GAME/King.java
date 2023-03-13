@@ -22,20 +22,20 @@ public class King extends Piece{
     public void makeMove(Square SelectedPiece, Square clickedSquare, Square[][] board){
         if(canCastle(SelectedPiece, clickedSquare, board, ((Piece)SelectedPiece.getComponent(0)).getColor())){
             if(Math.abs(clickedSquare.getXPos() - SelectedPiece.getXPos()) > 1){
-                if(clickedSquare.getXPos() == 1 && clickedSquare.getYPos() == 0){
-                    board[0][2].add(board[0][0].getComponent(0));
+                if(clickedSquare.getXPos() == 2 && clickedSquare.getYPos() == 0){
+                    board[0][3].add(board[0][0].getComponent(0));
                     board[0][0].removeAll();
                 }
-                if(clickedSquare.getXPos() == 5 && clickedSquare.getYPos() == 0){
-                    board[0][4].add(board[0][7].getComponent(0));
+                if(clickedSquare.getXPos() == 6 && clickedSquare.getYPos() == 0){
+                    board[0][5].add(board[0][7].getComponent(0));
                     board[0][7].removeAll();
                 }
-                if(clickedSquare.getXPos() == 1 && clickedSquare.getYPos() == 7){
-                    board[7][2].add(board[7][0].getComponent(0));
+                if(clickedSquare.getXPos() == 2 && clickedSquare.getYPos() == 7){
+                    board[7][3].add(board[7][0].getComponent(0));
                     board[7][0].removeAll();
                 }
-                if(clickedSquare.getXPos() == 5 && clickedSquare.getYPos() == 7){
-                    board[7][4].add(board[7][7].getComponent(0));
+                if(clickedSquare.getXPos() == 6 && clickedSquare.getYPos() == 7){
+                    board[7][5].add(board[7][7].getComponent(0));
                     board[7][7].removeAll();
                 }
             }
@@ -55,24 +55,24 @@ public class King extends Piece{
         //the king can castle if it and the rook its using haven't moved yet, and the spaces it has to travel are both empty and won't cause check
         if(getMoves() == 0 && !(inCheck(board, turn))){
             if(((Piece)SelectedPiece.getComponent(0)).getColor().equals("white")){
-                if(clickedSquare.getXPos() == 1 && clickedSquare.getYPos() == 7){
+                if(clickedSquare.getXPos() == 2 && clickedSquare.getYPos() == 7){
                     if(board[7][0].getComponentCount() > 0){
                         if(board[7][0].getComponent(0) instanceof Rook && ((Piece)board[7][0].getComponent(0)).getColor().equals(turn)){
-                            if(board[7][1].isEmpty() && board[7][2].isEmpty() && 
+                            if(board[7][1].isEmpty() && board[7][2].isEmpty() && board[7][3].isEmpty() &&
                                 ((Rook)board[7][0].getComponent(0)).getMoves() == 0){
-                                if(!(stillInCheck(SelectedPiece, board[7][1], board, turn) || stillInCheck(SelectedPiece, board[7][2], board, turn))){
+                                if(!(stillInCheck(SelectedPiece, board[7][1], board, turn) || stillInCheck(SelectedPiece, board[7][2], board, turn) || stillInCheck(SelectedPiece, board[7][3], board, turn))){
                                     return true;
                                 }
                             }
                         }
                     }
                 }
-                if(clickedSquare.getXPos() == 5 && clickedSquare.getYPos() == 7){
+                if(clickedSquare.getXPos() == 6 && clickedSquare.getYPos() == 7){
                     if(board[7][7].getComponentCount() > 0){
                         if(board[7][7].getComponent(0) instanceof Rook && ((Piece)board[7][7].getComponent(0)).getColor().equals(turn)){
-                            if(board[7][6].isEmpty() && board[7][5].isEmpty() && board[7][4].isEmpty() && 
+                            if(board[7][6].isEmpty() && board[7][5].isEmpty() && 
                                 ((Rook)board[7][7].getComponent(0)).getMoves() == 0){
-                                if(!(stillInCheck(SelectedPiece, board[7][6], board, turn) || stillInCheck(SelectedPiece, board[7][5], board, turn) || stillInCheck(SelectedPiece, board[7][4], board, turn))){
+                                if(!(stillInCheck(SelectedPiece, board[7][5], board, turn) || stillInCheck(SelectedPiece, board[7][6], board, turn))){
                                     return true;
                                 }
                         }
@@ -81,24 +81,24 @@ public class King extends Piece{
                 }
             }
             if(((Piece)SelectedPiece.getComponent(0)).getColor().equals("black")){
-                if(clickedSquare.getXPos() == 1 && clickedSquare.getYPos() == 0){
+                if(clickedSquare.getXPos() == 2 && clickedSquare.getYPos() == 0){
                     if(board[0][0].getComponentCount() > 0){
                         if(board[0][0].getComponent(0) instanceof Rook && ((Piece)board[0][0].getComponent(0)).getColor().equals(turn)){
-                            if(board[0][1].isEmpty() && board[0][2].isEmpty() && 
+                            if(board[0][1].isEmpty() && board[0][2].isEmpty() && board[0][3].isEmpty() && 
                                 ((Rook)board[0][0].getComponent(0)).getMoves() == 0){
-                                if(!(stillInCheck(SelectedPiece, board[0][1], board, turn) || stillInCheck(SelectedPiece, board[0][2], board, turn))){
+                                if(!(stillInCheck(SelectedPiece, board[0][1], board, turn) || stillInCheck(SelectedPiece, board[0][2], board, turn) || stillInCheck(SelectedPiece, board[0][3], board, turn))){
                                     return true;
                                 }
                         }
                         }
                     }
                 }
-                if(clickedSquare.getXPos() == 5 && clickedSquare.getYPos() == 0){
+                if(clickedSquare.getXPos() == 6 && clickedSquare.getYPos() == 0){
                     if(board[0][7].getComponentCount() > 0){
                         if(board[0][7].getComponent(0) instanceof Rook && ((Piece)board[0][7].getComponent(0)).getColor().equals(turn)){
-                            if(board[0][6].isEmpty() && board[0][5].isEmpty() && board[0][4].isEmpty() && 
+                            if(board[0][6].isEmpty() && board[0][5].isEmpty() && 
                                 ((Rook)board[0][7].getComponent(0)).getMoves() == 0){
-                                if(!(stillInCheck(SelectedPiece, board[0][6], board, turn) || stillInCheck(SelectedPiece, board[0][5], board, turn) || stillInCheck(SelectedPiece, board[0][4], board, turn))){
+                                if(!(stillInCheck(SelectedPiece, board[0][6], board, turn) || stillInCheck(SelectedPiece, board[0][5], board, turn))){
                                     return true;
                                 }
                         }
