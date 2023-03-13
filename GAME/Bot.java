@@ -42,7 +42,7 @@ public class Bot {
         if(depth == 2){
             beta = Double.NEGATIVE_INFINITY;
         }
-        double maxEval = Double.NEGATIVE_INFINITY;
+        double alpha = Double.NEGATIVE_INFINITY;
         
         ArrayList<Move> moves = validMoves(generatePossMoves(board), board, turn);
 
@@ -64,8 +64,8 @@ public class Bot {
             double eval = -1 * search(board, depth - 1);
             undoSimulatedMove(move);
             turn = (turn == "white") ? "black" : "white"; //turn updated is undone
-            if(eval >= maxEval){
-                maxEval = eval;
+            if(eval >= alpha){
+                alpha = eval;
                 if(depth==2){
                     bestMoves.add(new MovePair(move, eval)); 
                 }
@@ -79,13 +79,13 @@ public class Bot {
         }
         if(depth==2){
             for(int i = 0; i < bestMoves.size(); i++){
-                if(bestMoves.get(i).eval < maxEval){
+                if(bestMoves.get(i).eval < alpha){
                     bestMoves.remove(i);
                     i--;
                 }
             }
         }
-        return maxEval;
+        return alpha;
     }
     //makes a move and adds a copy of the squares involved to the move stack (subsquent changes to the move squares don't interfere)
     public void simulateMove(Move move){
